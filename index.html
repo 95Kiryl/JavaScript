@@ -7,23 +7,47 @@
 </head>
 <body>
 <script>
-const surname = prompt('Введите вашу фамилию', '');
-const name = prompt('Введите ваше имя', '');
-const patronymic = prompt('Введите ваше отчество', '');
-const age = parseInt(prompt('Введите ваш возраст', ''));
-const gender = confirm('Ваш пол мужской?');
-const daysAge = age * 365;
-const afterFiveYears = age + 5;
-const male = 'Мужской';
-const female = 'Женский';
-const answerTrue = 'да';
-const answerFalse = 'нет';
+
+let surname; 
+
+do {
+    surname = prompt('Введите вашу фамилию', '');
+} while (surname === '' || surname.length > 30 || isNaN(parseInt(surname)) === false);
+
+let name;
+
+do {
+    name = prompt('Введите ваше имя', '');
+} while (name === '' || name.length > 30 || isNaN(parseInt(name)) === false);
+
+let patronymic;
+
+do {
+    patronymic = prompt('Введите ваше отчество', '');
+} while (patronymic === '' || patronymic.length > 30 || isNaN(parseInt(patronymic)) === false);
+
+let age; 
+
+do {
+    age = Number(prompt('Введите ваш возраст', ''));
+} while (isNaN(age) || Number.isInteger(age) === false || age <= 0);
+
+
+const gender = confirm('Ваш пол мужской?'),
+    ageInDays = age * 365,
+    afterFiveYears = age + 5,
+    male = 'Мужской',
+    female = 'Женский',
+    answerTrue = 'да',
+    answerFalse = 'нет';
+
+   
 
 if (gender === true && age >= 63) {
     alert(`
     ваше ФИО: ${surname} ${name} ${patronymic}
     ваш возраст в годах: ${age}
-    ваш возраст в днях: ${daysAge}
+    ваш возраст в днях: ${ageInDays}
     через 5 лет вам будет: ${afterFiveYears}
     ваш пол: ${male}
     вы на пенсии: ${answerTrue}`);
@@ -31,7 +55,7 @@ if (gender === true && age >= 63) {
     alert(`
     ваше ФИО: ${surname} ${name} ${patronymic}
     ваш возраст в годах: ${age}
-    ваш возраст в днях: ${daysAge}
+    ваш возраст в днях: ${ageInDays}
     через 5 лет вам будет: ${afterFiveYears}
     ваш пол: ${male}
     вы на пенсии: ${answerFalse}`);
@@ -39,7 +63,7 @@ if (gender === true && age >= 63) {
     alert(`
     ваше ФИО: ${surname} ${name} ${patronymic}
     ваш возраст в годах: ${age}
-    ваш возраст в днях: ${daysAge}
+    ваш возраст в днях: ${ageInDays}
     через 5 лет вам будет: ${afterFiveYears}
     ваш пол: ${female}
     вы на пенсии: ${answerTrue}`);
@@ -47,7 +71,7 @@ if (gender === true && age >= 63) {
     alert(`
     ваше ФИО: ${surname} ${name} ${patronymic}
     ваш возраст в годах: ${age}
-    ваш возраст в днях: ${daysAge}
+    ваш возраст в днях: ${ageInDays}
     через 5 лет вам будет: ${afterFiveYears}
     ваш пол: ${female}
     вы на пенсии: ${answerFalse}`);
