@@ -6,76 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<script>
-
-let surname; 
-
-do {
-    surname = prompt('Введите вашу фамилию', '');
-} while (surname === '' || surname.length > 30 || isNaN(parseInt(surname)) === false);
-
-let name;
-
-do {
-    name = prompt('Введите ваше имя', '');
-} while (name === '' || name.length > 30 || isNaN(parseInt(name)) === false);
-
-let patronymic;
-
-do {
-    patronymic = prompt('Введите ваше отчество', '');
-} while (patronymic === '' || patronymic.length > 30 || isNaN(parseInt(patronymic)) === false);
-
-let age; 
-
-do {
-    age = Number(prompt('Введите ваш возраст', ''));
-} while (isNaN(age) || Number.isInteger(age) === false || age <= 0);
-
-
-const gender = confirm('Ваш пол мужской?'),
-    ageInDays = age * 365,
-    afterFiveYears = age + 5,
-    male = 'Мужской',
-    female = 'Женский',
-    answerTrue = 'да',
-    answerFalse = 'нет';
-
-   
-
-if (gender === true && age >= 63) {
-    alert(`
-    ваше ФИО: ${surname} ${name} ${patronymic}
-    ваш возраст в годах: ${age}
-    ваш возраст в днях: ${ageInDays}
-    через 5 лет вам будет: ${afterFiveYears}
-    ваш пол: ${male}
-    вы на пенсии: ${answerTrue}`);
-} else if (gender === true && age <= 63) {
-    alert(`
-    ваше ФИО: ${surname} ${name} ${patronymic}
-    ваш возраст в годах: ${age}
-    ваш возраст в днях: ${ageInDays}
-    через 5 лет вам будет: ${afterFiveYears}
-    ваш пол: ${male}
-    вы на пенсии: ${answerFalse}`);
-} else if (gender === false && age >= 58) {
-    alert(`
-    ваше ФИО: ${surname} ${name} ${patronymic}
-    ваш возраст в годах: ${age}
-    ваш возраст в днях: ${ageInDays}
-    через 5 лет вам будет: ${afterFiveYears}
-    ваш пол: ${female}
-    вы на пенсии: ${answerTrue}`);
-} else if (gender === false && age <= 58) {
-    alert(`
-    ваше ФИО: ${surname} ${name} ${patronymic}
-    ваш возраст в годах: ${age}
-    ваш возраст в днях: ${ageInDays}
-    через 5 лет вам будет: ${afterFiveYears}
-    ваш пол: ${female}
-    вы на пенсии: ${answerFalse}`);
-};
-</script>
+    
+<script src="script.js"></script>    
 </body>
 </html>
