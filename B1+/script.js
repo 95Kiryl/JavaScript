@@ -8,10 +8,8 @@ do {
 
 function getСentury(year) {
     const century = Math.ceil(year / 100);
-    return century;
+    return `${century} век`;
 }
 
-getСentury(year);
-
-alert(`${century} век`);
+console.log(getСentury(year));
 
