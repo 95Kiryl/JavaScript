@@ -1,0 +1,41 @@
+#app {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#form input:last-child {
+    background-color: rgb(31, 117, 246);
+    width: 120px;
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: medium;
+    
+}
+
+#form input:last-child:hover {
+    background-color: rgb(31, 102, 208);  
+    transition: .5s;
+}
+
+input {
+    
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+
