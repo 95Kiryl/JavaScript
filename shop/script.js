@@ -58,30 +58,33 @@ let newCard = '';
 //Array with cards
 
 const cards = [
-    {
-        id: 1,
-        img: '',
-        title: 'Indian',
-        show: false,
-        model: 'Scout Bobber',
-        description: 'Новый Indian Scout Bobber способен на нечтo большее, чем обычный мотоцикл. Каждый дюйм этого байка верен классическому стилю Bobber, его внешность - превосходное выражение уличного мотодвижения.',
-    },
-    {
-        id: 2,
-        img: '',
-        title: 'Indian',
-        show: false,
-        model: 'Scout Bobber',
-        description: 'Новый Indian Scout Bobber способен на нечтo большее, чем обычный мотоцикл. Каждый дюйм этого байка верен классическому стилю Bobber, его внешность - превосходное выражение уличного мотодвижения.',
-    },
-    {
-        id: 3,
-        img: '',
-        title: 'Indian',
-        show: false,
-        model: 'Scout Bobber',
-        description: 'Новый Indian Scout Bobber способен на нечтo большее, чем обычный мотоцикл. Каждый дюйм этого байка верен классическому стилю Bobber, его внешность - превосходное выражение уличного мотодвижения.',
-    },
+    // {
+    //     id: 1,
+    //     img: '',
+    //     title: 'Indian',
+    //     show: false,
+    //     price: 10,
+    //     model: 'Scout Bobber',
+    //     description: 'Новый Indian Scout Bobber способен на нечтo большее, чем обычный мотоцикл. Каждый дюйм этого байка верен классическому стилю Bobber, его внешность - превосходное выражение уличного мотодвижения.',
+    // },
+    // {
+    //     id: 2,
+    //     img: '',
+    //     title: 'Indian',
+    //     show: false,
+    //     price: 200,
+    //     model: 'Scout Bobber',
+    //     description: 'Новый Indian Scout Bobber способен на нечтo большее, чем обычный мотоцикл. Каждый дюйм этого байка верен классическому стилю Bobber, его внешность - превосходное выражение уличного мотодвижения.',
+    // },
+    // {
+    //     id: 3,
+    //     img: '',
+    //     title: 'Indian',
+    //     show: false,
+    //     price: 500,
+    //     model: 'Scout Bobber',
+    //     description: 'Новый Indian Scout Bobber способен на нечтo большее, чем обычный мотоцикл. Каждый дюйм этого байка верен классическому стилю Bobber, его внешность - превосходное выражение уличного мотодвижения.',
+    // },
 ];
 
 //Output cards
@@ -96,7 +99,7 @@ const render = (cards) => {
                         <div class="card-body">
                             <h5 class="card-title">${i.title} ${i.model}</h5>
                             <p class="card-text">${i.description}</p>
-                            <a href="#" class="btn btn-primary">Заказать</a>
+                            <a href="#" class="btn btn-primary">Заказать за ${i.price}$</a>
                         </div>
                 </div>`
         }
@@ -104,7 +107,7 @@ const render = (cards) => {
     return app.innerHTML = newCard;
 }
 
-render(cards);
+// render(cards);
 
 
 //Clear form
@@ -123,6 +126,7 @@ const clearInput = () => {
 const add = () => {
     const title = document.querySelector('[name="brand"]').value;
     const model = document.querySelector('[name="model"]').value;
+    let randomPrice = Math.round(Math.random() * (1000 - 100) + 100);
 
     if (title === '' || model === '') {
         alert('Введите данные');
@@ -132,6 +136,7 @@ const add = () => {
             img: '',
             title,
             show: false,
+            price: `${randomPrice}`,
             model,
             description: 'Новый Indian Scout Bobber способен на нечтo большее, чем обычный мотоцикл. Каждый дюйм этого байка верен классическому стилю Bobber, его внешность - превосходное выражение уличного мотодвижения.',
         })
@@ -139,6 +144,17 @@ const add = () => {
         render(cards);
         clearInput();
     }
+}
+
+
+//Filter cards
+
+const filterMyCards = () => {
+    const myFilter = document.querySelector('[name="filter"]').value;
+    const newFilterCard = cards.filter(item => item.price < myFilter);
+    newFilterCard.forEach(i => i.show = false);
+    newCard = '';
+    render(newFilterCard);
 }
 
 

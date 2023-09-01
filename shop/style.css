@@ -8,21 +8,21 @@
 
 #form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+    justify-content: start;
+    margin-left: 50px;
+    margin-top: 10px;
 }
 
-#form input:last-child {
+#form input.btn {
     background-color: rgb(31, 117, 246);
-    width: 120px;
+    width: 130px;
     border-radius: 5px;
     color: aliceblue;
     font-size: medium;
     
 }
 
-#form input:last-child:hover {
+#form input.btn:hover {
     background-color: rgb(31, 102, 208);  
     transition: .5s;
 }
