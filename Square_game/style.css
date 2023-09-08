@@ -1,0 +1,15 @@
+#field {
+    border: 7px solid black;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+#square {
+    border: 1px solid red;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: red;
+}
