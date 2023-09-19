@@ -1,0 +1,6 @@
+#output {
+    width: 900px;
+    height: 300px;
+    border: 1px solid black;
+    overflow: auto;
+}
