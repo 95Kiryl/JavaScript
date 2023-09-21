@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="https://fe.it-academy.by/TestForm.php" method="get" name="form">
+        <label>Разработчики сайта:</label>
+        <input type="text" name="developers" value="" />
+        <br/>
+        <label>Название сайта:</label>
+        <input type="text" name="name" value=""/>
+        <br/>
+        <label>URL сайта:</label>
+        <input type="text" name="url" value=""/>
+        <br/>
+        <label>Дата запуска сайта:</label>
+        <input type="date" name="data" value=""/>
+        <br/>
+        <label>Посетителей в сутки:</label>
+        <input type="text" name="visitors" value=""/>
+        <br/>
+        <label>Email для связи:</label>
+        <input type="text" name="mail" value=""/>
+        <br/>
+        <label list="options">Рубрика каталога:</label>
+        <select id="options">
+            <option value="1">бытовая техника</option>
+            <option value="2">домашний уют</option>
+            <option value="3">здоровье</option>
+        </select>
+        <br/>
+        <label>Размещение:</label>
+        <div class="wrapp">
+            <input type="radio" name="accommodation" id="free" value=""/>
+            <label for="free">бесплатное</label>
+            <input type="radio" name="accommodation" id="paid" value=""/>
+            <label for="paid">платное</label>
+            <input type="radio" name="accommodation" id="vip" value=""/>
+            <label class="accommodationField" for="vip">VIP</label>
+        </div>
+        <br/>
+        <label>Разрешить отзывы:</label>
+        <input type="checkbox" name="reviews" value=""/>
+        <br/>
+        <label for="description">Описание сайта:</label>
+        <br/>
+        <textarea id="description" name="description"></textarea>
+        <br/>
+        <input type="submit" name="submit" value="Опубликовать"/>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
